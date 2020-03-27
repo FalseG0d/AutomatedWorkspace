@@ -44,7 +44,7 @@ class Order(models.Model):
     product=models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
     date_created=models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField(default=datetime.now()+timedelta(days=7))
-    status=models.CharField(max_length=120,choices=STATUS)
+    status=models.CharField(max_length=120,choices=STATUS,default=STATUS[0][0])
     
     def __str__(self):
         return self.product.name
