@@ -45,6 +45,7 @@ class Order(models.Model):
     date_created=models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField(default=datetime.now()+timedelta(days=7))
     status=models.CharField(max_length=120,choices=STATUS,default=STATUS[0][0])
-    
+    note=models.CharField(max_length=1000,null=True)
+
     def __str__(self):
         return self.product.name

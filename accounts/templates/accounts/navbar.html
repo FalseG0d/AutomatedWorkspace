@@ -11,4 +11,8 @@
         <a class="nav-item nav-link" href="/products">Products</a>
       </div>
     </div>
+    <div class="navbar-nav">
+      <span class="nav-item nav-link">Hello, {{request.user}}</span>
+      <span><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></span>
+    </div>
   </nav>
