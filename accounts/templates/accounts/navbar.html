@@ -5,12 +5,14 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    {% if request.user.is_staff %}
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="/">Dashboard <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="/products">Products</a>
       </div>
     </div>
+    {% endif %}
     <div class="navbar-nav">
       <span class="nav-item nav-link">Hello, {{request.user}}</span>
       <span><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></span>
