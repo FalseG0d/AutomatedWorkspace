@@ -31,10 +31,13 @@ def home(request):
     'delivered':delivered,'pending':pending}
 
     return render(request,"accounts/dashboard.html",context)
-
+	
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
 def userPage(request):
-    context={}
-    return render(request,'accounts/main.html',context)
+	orders=request.user.customer.order_set.all()
+	context={'ORDERS':orders}
+	return render(request,'accounts/main.html',context)
 
 @unauthenticated_user
 def registerPage(request):
@@ -45,7 +48,8 @@ def registerPage(request):
         form=CreateUserForm(request.POST)
         if form.is_valid():
             user=form.save()
-            username=form.clean_data.get('username')
+			#Customer.object.create(user=user)
+            username=form.get('username')
 
             group=Group.objects.get(name='customer')
             user.groups.add(group)
