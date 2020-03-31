@@ -35,9 +35,15 @@ def home(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['customer'])
 def userPage(request):
-	orders=request.user.customer.order_set.all()
-	context={'ORDERS':orders}
-	return render(request,'accounts/main.html',context)
+	orders = request.user.customer.order_set.all()
+
+	total_orders = orders.count()
+	delivered = orders.filter(status='Delivered').count()
+	pending = orders.filter(status='Pending').count()
+
+	context = {'orders':orders, 'total_orders':total_orders,
+	'delivered':delivered,'pending':pending}
+	return render(request, 'accounts/user.html', context)
 
 @unauthenticated_user
 def registerPage(request):
@@ -49,7 +55,7 @@ def registerPage(request):
         if form.is_valid():
             user=form.save()
 			#Customer.object.create(user=user)
-            username=form.get('username')
+            username = form.cleaned_data.get('username')
 
             group=Group.objects.get(name='customer')
             user.groups.add(group)
