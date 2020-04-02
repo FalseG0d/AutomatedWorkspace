@@ -64,6 +64,14 @@ def registerPage(request):
     context={'form':form}
     return render(request,'accounts/register.html',context)
 
+@login_required
+@allowed_users(allowed_roles=['customer'])
+def accountSettings(request):
+	customer=request.user.customer
+	form=CustomerForm(instance=customer)
+	context={'form':form}
+	return render(request,'accounts/account_settings.html',context)
+
 @unauthenticated_user
 def loginPage(request):
     if request.method=='POST':
