@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Customer(models.Model):
-    user=models.OneToOneField(User,null=True,on_delete=models.CASCADE)
+    user=models.OneToOneField(User,null=True,on_delete=models.CASCADE,blank=True)
     name=models.CharField(max_length=120)
     phone=models.CharField(max_length=12)
     email=models.CharField(max_length=120)
     date_created=models.DateTimeField(auto_now_add=True)
     address=models.CharField(max_length=200, null=True)
-    profile_pic=models.ImageField(null=True,blank=True)
+    profile_pic=models.ImageField(null=True,blank=True,default="default.png")
 
     def __str__(self):
         return self.name
