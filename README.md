@@ -132,5 +132,5 @@ Project Link: [https://github.com/FalseG0d/DjangoCustomerMgmt](https://github.co
 [license-url]: https://github.com/FalseG0d/DjangoCustomerMgmt/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/apoorv-garg-137137171/
-[product-screenshot]: images/pexels.jpeg
+[product-screenshot]: images/pexels.jpg
 #Django Customer Management System
