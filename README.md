@@ -18,7 +18,7 @@
   <h3 align="center">Made By FalseG0d</h3>
 
   <p align="center">
-    A list of Python Programs implementing the basic Hacking Techniques(Foot Printing, Spoofing, Brute Forcing, etc). <br>Note. The reporsitory may require you to download some other requirenments.
+    A Management App built on django to be deployed on the web and used by a company to keep track of it's employs, orders and other buisnesses. This repository is a simple template and can be expanded for customied use.
     <br />
     <a href="https://github.com/FalseG0d?tab=repositories"><strong>Explore Other Projects »</strong></a>
     <br />
@@ -39,7 +39,6 @@
 
 * [Getting Started](#getting-started)
 * [Prerquisites](#prerquisites)
-* [Features](#features)
 * [Built With](#built-with)
 * [Authors](#authors)
 * [Acknowledgement](#acknowledgement)
@@ -55,20 +54,21 @@ Simply Open the App or Feature you wish to learn by selecting a folder of your c
 git clone https://github.com/FalseG0d/DjangoCustomerMgmt.git
 ```
 
-2. Browse through the files to find an appropriate scene/effect.
+2. Run the Django App on a Local Machine or a Server.
 
 
 ## Prerequisites
 
 1. Python
 2. Pip
+3. Django
 
 
 
 ## Features
 
 1. Supports Django 2.0;
-2. Full-featured: Real-time Blog updates, Image upload, Editable contents, insert, Search , Drafts;
+2. Full-featured: Real-time updates, Image upload, Editable contents, insert, Search , Drafts;
 3. Keyword Search : Support ToC (Table of Contents);
 4. Interactive UI;
 5. Support identification;
