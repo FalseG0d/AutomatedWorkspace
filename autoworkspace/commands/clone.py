@@ -16,7 +16,7 @@ def clone(args):
         dest="."
     
     elif len_args==2:
-        dest=cwd+"\\"+args[1]
+        dest=args[1]
         
     clone_from_dir(src=src,dest=dest)
 

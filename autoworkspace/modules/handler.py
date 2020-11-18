@@ -34,13 +34,16 @@ def rolling_backup(src,dest):
 
 def clone_from_dir(src,dest):
     cwd=os.getcwd()
+    project_name=src.split("\\")[-1]
 
-    dest=cwd+"\\"+dest
+    dest+="\\"+project_name
+
+    if ":" not in dest:
+        dest=cwd+"\\"+dest
+
     print("Source Folder: ",src)
     print("Destination Folder: ",dest)
     
-    if os.path.exists(dest):
-        shutil.rmtree(dest)
 
     shutil.copytree(src=src,dst=dest)
 
