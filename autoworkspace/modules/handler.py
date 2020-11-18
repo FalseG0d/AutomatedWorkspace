@@ -23,9 +23,36 @@ def rolling_backup(src,dest):
 
     try:
         shutil.copytree(src=src,dst=dest)
-        print("Last Backup Created At: ",current_time)
+        print("Backup Process Was Successfull: ",current_time)
         print("Source Folder: ",source)
         print("Destination Folder: ",dest)
-    except expression as identifier:
+    except err:
         print("Something Went Wrong In Creating The Backup At: ",current_time)
-        print("Check Logs To View Last Backup")
+        print("Check Logs To View Last Backup:")
+        print(err)
+
+
+def clone_from_dir(src,dest):
+    cwd=os.getcwd()
+
+    dest=cwd+"\\"+dest
+    print("Source Folder: ",src)
+    print("Destination Folder: ",dest)
+    
+    if os.path.exists(dest):
+        shutil.rmtree(dest)
+
+    shutil.copytree(src=src,dst=dest)
+
+    '''
+    try:
+        shutil.copytree(src=src,dst=dest)
+        print("Successfull Cloned Repository")
+        print("Source Folder: ",src)
+        print("Destination Folder: ",dest)
+    except:
+        print("Something Went Wrong")
+        print("Could Not Clone Repository")
+        print("Source Folder: ",src)
+        print("Destination Folder: ",dest)
+    '''
