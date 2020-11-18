@@ -1,6 +1,5 @@
-import sys,os
+import sys
 from modules.scheduler import Scheduler
-from dotenv import load_dotenv
 
 def rolling_backup(args):
 
@@ -8,13 +7,11 @@ def rolling_backup(args):
 
       if len_args==0:
             working_dir="."
-            load_dotenv()
-            target_dir=str(os.getenv('Rolling_Backup'))
+            target_dir="F:\Backups\Rolling"
             interval=5
       elif len_args==1:
             working_dir="."
-            load_dotenv()
-            target_dir=str(os.getenv('Rolling_Backup'))
+            target_dir="F:\Backups\Rolling"
             interval=int(args[0])
       elif len_args==2:
             working_dir="."
