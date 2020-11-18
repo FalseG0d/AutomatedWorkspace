@@ -1,4 +1,4 @@
-import sys
+import sys,os
 from modules.scheduler import Scheduler
 from dotenv import load_dotenv
 
