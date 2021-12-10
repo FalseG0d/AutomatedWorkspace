@@ -1,7 +1,6 @@
-# Automated Workspace
-## (A Pivot From Original Project)
+# Linux Automation
 
-[original-project](https://github.com/FalseG0d/DjangoPractice/tree/master/DjangoCustomerMgmt)
+A list Git Bash Projects To Automate Various Tasks.
 
 ### Features To Be Added
 
